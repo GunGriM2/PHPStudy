@@ -30,76 +30,68 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+                    <?php
+
+                        $elements = [
+                            [
+                                'title' => 'My Tasks',
+                                'info' => '130 / 500',
+                                'bg' => 'bg-fusion-400',
+                                'width' => '65%',
+                                'value_now' => '65',
+                                'value_min' => '0',
+                                'value_max' => '100'
+                            ],
+                            [
+                                'title' => 'Transfered',
+                                'info' => '440 TB',
+                                'bg' => 'bg-success-500',
+                                'width' => '34%',
+                                'value_now' => '34',
+                                'value_min' => '0',
+                                'value_max' => '100'
+                            ],
+                            [
+                                'title' => 'Bugs Squashed',
+                                'info' => '77%',
+                                'bg' => 'bg-info-400',
+                                'width' => '77%',
+                                'value_now' => '77',
+                                'value_min' => '0',
+                                'value_max' => '100'
+                            ],
+                            [
+                                'title' => 'User Testing',
+                                'info' => '7 days',
+                                'bg' => 'bg-primary-300',
+                                'width' => '84%',
+                                'value_now' => '84',
+                                'value_min' => '0',
+                                'value_max' => '100'
+                            ]
+                        ];
+
+                    ?>
                     <div class="panel-container show">
                         <div class="panel-content">
 
-                            <?php
-
-                            $elements = array(  '<div class="d-flex mt-2">
-                                                    My Tasks
-                                                    <span class="d-inline-block ml-auto">130 / 500</span>
-                                                 </div>
-                                                 <div class="progress progress-sm mb-3">
-                                                    <div class="progress-bar bg-fusion-400" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                                 </div>',
-                                                '<div class="d-flex">
-                                                    Transfered
-                                                    <span class="d-inline-block ml-auto">440 TB</span>
-                                                </div>
-                                                <div class="progress progress-sm mb-3">
-                                                    <div class="progress-bar bg-success-500" role="progressbar" style="width: 34%;" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>',
-                                                '<div class="d-flex">
-                                                    Bugs Squashed
-                                                    <span class="d-inline-block ml-auto">77%</span>
-                                                </div>
-                                                <div class="progress progress-sm mb-3">
-                                                    <div class="progress-bar bg-info-400" role="progressbar" style="width: 77%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>',
-                                                '<div class="d-flex">
-                                                    User Testing
-                                                    <span class="d-inline-block ml-auto">7 days</span>
-                                                </div>
-                                                <div class="progress progress-sm mb-g">
-                                                    <div class="progress-bar bg-primary-300" role="progressbar" style="width: 84%;" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>');
-
-                            foreach ($elements as $name)
-                                echo $name;
-
-                            ?>
-
-                            <!--<div class="d-flex mt-2">
-                                My Tasks
-                                <span class="d-inline-block ml-auto">130 / 500</span>
+                            <?php  foreach($elements as $element): ?>
+                            <div class="d-flex mt-2">
+                                <?php  echo $element['title']; ?>
+                                <span class="d-inline-block ml-auto"><?php  echo $element['info']; ?></span>
                             </div>
                             <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-fusion-400" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar <?php  echo $element['bg']; ?>"
+                                     role="progressbar"
+                                     style="width: <?php  echo $element['width']; ?>;"
+                                     aria-valuenow="<?php  echo $element['value_now']; ?>"
+                                     aria-valuemin="<?php  echo $element['value_min']; ?>"
+                                     aria-valuemax="<?php  echo $element['value_max']; ?>">
+                                </div>
                             </div>
+                            <?php endforeach; ?>
 
-                            <div class="d-flex">
-                                Transfered
-                                <span class="d-inline-block ml-auto">440 TB</span>
-                            </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-success-500" role="progressbar" style="width: 34%;" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
 
-                            <div class="d-flex">
-                                Bugs Squashed
-                                <span class="d-inline-block ml-auto">77%</span>
-                            </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-info-400" role="progressbar" style="width: 77%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-
-                            <div class="d-flex">
-                                User Testing
-                                <span class="d-inline-block ml-auto">7 days</span>
-                            </div>
-                            <div class="progress progress-sm mb-g">
-                                <div class="progress-bar bg-primary-300" role="progressbar" style="width: 84%;" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>-->
                         </div>
                     </div>
                 </div>
