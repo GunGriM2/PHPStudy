@@ -30,24 +30,37 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+                    <?php
+                        $elements = [
+                            [
+                                'title' => 'Главная',
+                                'href' => 'example.com',
+                                'is_link' => true
+                            ],
+                            [
+                                'title' => 'PHP',
+                                'href' => 'example.com/php',
+                                'is_link' => true
+                            ],
+                            [
+                                'title' => 'Функции',
+                                'href' => '',
+                                'is_link' => false
+                            ],
+                        ];
+                    ?>
                     <div class="panel-container show">
                         <div class="panel-content">
                             <ol class="breadcrumb page-breadcrumb">
 
-                                <?php
+                                <?php foreach ($elements as $element): ?>
+                                    <?php if ($element['is_link']): ?>
+                                        <li class="breadcrumb-item"><a href="<?php echo $element['href']; ?>"><?php echo $element['title']; ?></a></li>
+                                    <?php else: ?>
+                                        <li class="breadcrumb-item active"><?php echo $element['title']; ?></li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
 
-                                    $elements = array(  '<li class="breadcrumb-item"><a href="#">Главная</a></li>',
-                                                        '<li class="breadcrumb-item"><a href="#">PHP</a></li>',
-                                                        '<li class="breadcrumb-item active">Функции</li>');
-
-                                    foreach ($elements as $name)
-                                        echo $name;
-
-                                ?>
-
-                                <!--<li class="breadcrumb-item"><a href="#">Главная</a></li>
-                                <li class="breadcrumb-item"><a href="#">PHP</a></li>
-                                <li class="breadcrumb-item active">Функции</li>-->
                             </ol>
                         </div>
                     </div>
