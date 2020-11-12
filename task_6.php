@@ -42,7 +42,7 @@
                                 'email_link_href' => 'https://wrapbootstrap.com/user/myorange',
                                 'email_link_text' => '<i class="fal fa-envelope"></i>',
                                 'email_link_title' => 'Contact Sunny',
-                                'banned' => 'active'
+                                'status' => 'active'
                             ],
                             [
                                 'image_src' => 'img/demo/authors/josh.png',
@@ -54,7 +54,7 @@
                                 'email_link_href' => 'https://wrapbootstrap.com/user/Walapa',
                                 'email_link_text' => '<i class="fal fa-envelope"></i>',
                                 'email_link_title' => 'Contact Jos',
-                                'banned' => 'active'
+                                'status' => 'active'
                             ],
                             [
                                 'image_src' => 'img/demo/authors/jovanni.png',
@@ -66,7 +66,7 @@
                                 'email_link_href' => 'https://wrapbootstrap.com/user/lodev09',
                                 'email_link_text' => '<i class="fal fa-envelope"></i>',
                                 'email_link_title' => 'Contact Jovanni',
-                                'banned' => 'banned'
+                                'status' => 'banned'
                             ],
                             [
                                 'image_src' => 'img/demo/authors/roberto.png',
@@ -78,7 +78,7 @@
                                 'email_link_href' => 'https://wrapbootstrap.com/user/sildur',
                                 'email_link_text' => '<i class="fal fa-envelope"></i>',
                                 'email_link_title' => 'Contact Roberto',
-                                'banned' => 'banned'
+                                'status' => 'banned'
                             ]
                         ];
 
@@ -88,7 +88,7 @@
                             <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
 
                                 <?php foreach ($elements as $element): ?>
-                                    <div class=" <?php echo ($element['banned'] == 'banned' ? 'banned' : '') ?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                    <div class=" <?php echo ($element['status'] == 'banned' ? 'banned' : '') ?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                         <img src="<?php echo $element['image_src']?>" alt="<?php echo $element['image_alt']?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                         <div class="ml-2 mr-3">
                                             <h5 class="m-0">
